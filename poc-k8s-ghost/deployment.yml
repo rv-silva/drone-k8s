@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: poc-ghost
+  namespace: poc
+  labels:
+    app: ghost
+    tier: web
+    env: poc
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ghost
+  template:
+    metadata:
+      labels:
+        app: ghost
+        tier: web
+        env: poc
+    spec:
+      containers:
+        - name: ghost
+          image: ghost:4.24.0
+          ports:
+            - containerPort: 2368
