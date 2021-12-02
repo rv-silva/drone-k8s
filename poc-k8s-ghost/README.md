@@ -17,3 +17,5 @@ This directory contains objects to create Ghost Kubernetes Application and its d
 - NFS as Kubernetes deployment was used as Ghost requires shared WriteRead disk. In a production Environment GCP Filestore is highly recommended to provide enhanced scalability.
 - A public Docker Image is used, but it can have more granular configuration if necessary.
 - TLS and Certificates must be added to a Production Env.
+- Namespaces & Kustomize can be added to achieve separation of concerns between Envrionments (Dev,Stg,Prd).
+- Deployments can be automated with CD Pipelines. Refer to [examples/pipeline.yml](examples/pipeline.yml). 
