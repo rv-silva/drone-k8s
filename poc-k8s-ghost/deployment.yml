@@ -41,3 +41,10 @@ spec:
                 configMapKeyRef:
                   name: ghost-config
                   key: node_env
+          volumeMounts:
+            - mountPath: /var/lib/ghost/content
+              name: content
+      volumes:
+      - name: content
+        persistentVolumeClaim:
+          claimName: nfs
